@@ -1,33 +1,61 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
+.todo-list {
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
 
-    thead {
-        background-color: $primary-color;
-        color: white;
-
-        th {
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid $secondary-color;
-        }
+    h1 {
+        text-align: center;
+        color: $secondary-color;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
     }
 
-    tbody {
-        tr {
-            transition: background-color 0.3s;
+    table {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-collapse: collapse;
 
-            &:hover {
-                background-color: $hover-color;
-            }
+        thead {
+            background-color: $primary-color;
+            color: white;
 
-            td {
+            th {
                 padding: 15px;
-                border-bottom: 1px solid $border-color;
-                color: $text-color;
+                font-weight: 600;
+                border-bottom: 2px solid $secondary-color;
+                text-align: center;
+                @media (max-width: 600px) {
+                    padding: 10px 0px 10px 0px;
+                    padding-right: 5px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: $hover-color;
+                }
+
+                td {
+                    padding: 15px;
+                    border-bottom: 1px solid $border-color;
+                    color: $text-color;
+
+                    @media (max-width: 600px) {
+                        padding: 10px;
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }
-    
 }
