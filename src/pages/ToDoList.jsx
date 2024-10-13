@@ -2,6 +2,7 @@ import { useState } from "react"
 import { TaskForm } from "../cmps/TaskForm"
 import { TaskList } from "../cmps/TaskList"
 import { DeleteDialog } from "../cmps/DeleteDialog"
+import { TaskFilters } from "../cmps/TaskFilters" 
 
 export function ToDoList() {
     const [tasks, setTasks] = useState([
@@ -14,6 +15,14 @@ export function ToDoList() {
     // State to manage delete confirmation dialog
     const [open, setOpen] = useState(false)
     const [taskToDelete, setTaskToDelete] = useState(null)
+
+    // Filter states
+    const [assigneeFilter, setAssigneeFilter] = useState("")
+    const [priorityFilter, setPriorityFilter] = useState("")
+
+    // Unique Assignees and Priorities
+    const uniqueAssignees = [...new Set(tasks.map(task => task.assignee))]
+    const uniquePriorities = [...new Set(tasks.map(task => task.priority))]
 
     function addTask(task, assignee, priority) {
         setTasks([...tasks, { task, assignee, priority }])
@@ -46,6 +55,13 @@ export function ToDoList() {
         setEditIndex(index)
     }
 
+    // Filtered tasks based on filters
+    const filteredTasks = tasks.filter(task => {
+        const matchesAssignee = assigneeFilter ? task.assignee === assigneeFilter : true
+        const matchesPriority = priorityFilter ? task.priority === priorityFilter : true
+        return matchesAssignee && matchesPriority
+    })
+
     return (
         <div className="todo-list">
             <h1>Todo List</h1>
@@ -55,7 +71,15 @@ export function ToDoList() {
                 editIndex={editIndex}
                 taskData={editIndex !== null ? tasks[editIndex] : {}}
             />
-            <TaskList tasks={tasks} editTask={editTask} confirmDelete={confirmDelete} />
+            <TaskFilters
+                assigneeFilter={assigneeFilter}
+                onAssigneeFilterChange={(e) => setAssigneeFilter(e.target.value)}
+                priorityFilter={priorityFilter}
+                onPriorityFilterChange={(e) => setPriorityFilter(e.target.value)}
+                uniqueAssignees={uniqueAssignees}
+                uniquePriorities={uniquePriorities}
+            />
+            <TaskList tasks={filteredTasks} editTask={editTask} confirmDelete={confirmDelete} />
             <DeleteDialog open={open} handleClose={handleClose} deleteTask={deleteTask} />
         </div>
     )

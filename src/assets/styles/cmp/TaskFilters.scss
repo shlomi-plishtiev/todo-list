@@ -1,0 +1,22 @@
+.filter-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+h2{
+    margin: 0.2rem 1rem 0px 0;
+
+}
+    select {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    }
+}

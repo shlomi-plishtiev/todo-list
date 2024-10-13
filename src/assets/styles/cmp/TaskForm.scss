@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input[type="text"],
+    select {
+        padding: 15px;
+        border: 2px solid $border-color;
+        border-radius: $border-radius;
+        font-size: 16px;
+        background-color: #ffffff;
+        color: $text-color;
+        transition: border-color 0.3s, background-color 0.3s;
+
+        &:focus {
+            border-color: $secondary-color;
+            background-color: #ffe7e0;
+            outline: none;
+        }
+    }
+
+    button {
+        padding: 15px;
+        border: none;
+        border-radius: $border-radius;
+        background-color: $secondary-color;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        margin-bottom: 1rem;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+}

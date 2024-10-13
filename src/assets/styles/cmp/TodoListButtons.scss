@@ -1,0 +1,37 @@
+.delete-btn {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+        background-color: darken(#ff4c4c, 10%);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+        background-color: darken(#007bff, 10%);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}

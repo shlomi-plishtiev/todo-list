@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        background-color: $primary-color;
+        color: white;
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid $secondary-color;
+        }
+    }
+
+    tbody {
+        tr {
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $hover-color;
+            }
+
+            td {
+                padding: 15px;
+                border-bottom: 1px solid $border-color;
+                color: $text-color;
+            }
+        }
+    }
+    
+}
