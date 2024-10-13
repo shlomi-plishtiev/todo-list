@@ -1,18 +1,9 @@
 // Colors
-$clr1: #ce2e6c;
-$clr2: #4f3a65;
-$clr3: #574f7d;
-$clr4: #95adbe;
-$clr5: #dff0ea;
-$clr6: #fff;
-$clr7: #222;
+$primary-color: #1e1e2f;
+$secondary-color: #ff9a8d;
+$background-color: #f4f4f4;
+$text-color: #333333;
+$hover-color: rgba(255, 154, 141, 0.2);
+$border-color: #d1d1d1;
 
-$gray1: #ddd;
-$gray2: #aaa;
-$gray3: #777;
-$gray4: #333;
-
-// Breakpoints
-$mobile-breakpoint: 460px;
-$narrow-breakpoint: 720px;
-$normal-breakpoint: 960px;
+$border-radius: 10px;
