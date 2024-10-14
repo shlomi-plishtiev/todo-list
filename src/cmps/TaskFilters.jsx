@@ -1,5 +1,3 @@
-import React from "react"
-
 export function TaskFilters({
     assigneeFilter, onAssigneeFilterChange, priorityFilter, onPriorityFilterChange, uniqueAssignees, uniquePriorities, sortByAssignee, sortAssigneeAsc, sortByPriority, sortPriorityAsc
 }) {
@@ -34,5 +32,5 @@ export function TaskFilters({
                 </div>
             </div>
         </div>
-    );
+    )
 }

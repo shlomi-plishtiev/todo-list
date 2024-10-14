@@ -1,8 +1,8 @@
-import React, { useState } from "react"
 import { TaskForm } from "../cmps/TaskForm"
 import { TaskList } from "../cmps/TaskList"
 import { DeleteDialog } from "../cmps/DeleteDialog"
 import { TaskFilters } from "../cmps/TaskFilters" 
+import { useState } from "react"
 
 export function ToDoList() {
     const [tasks, setTasks] = useState([

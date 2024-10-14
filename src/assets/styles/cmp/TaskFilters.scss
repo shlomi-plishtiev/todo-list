@@ -1,11 +1,18 @@
 .filter-options {
     display: flex;
     padding: 10px;
-    gap: 20px;
     padding-top: 0;
-    .sort{
-        min-width: 200px;  
+    justify-content: space-around;
+
+    .sort {
+        min-width: 130px;
     }
+
+    .filter {
+        min-width: 130px;
+        max-width: 150px;
+    }
+
     h2 {
         margin-top: 8px;
         margin-right: 0.5rem;
@@ -15,8 +22,6 @@
             margin-top: 0;
             margin-bottom: 5px;
         }
-       
-       
     }
 
     select {
@@ -26,11 +31,13 @@
         border-radius: 4px;
         font-size: 16px;
         margin-right: 5px;
+        width: 136px;
 
         @media (max-width: 600px) {
             font-size: 14px;
             width: 135px;
         }
+
         @media (max-width: 730px) {
             font-size: 14px;
             width: 123px;
@@ -39,8 +46,7 @@
     }
 
     .sort-buttons {
-        display: flex;
-        flex-direction: column;
+        display: grid;
 
         button {
             margin-bottom: 10px;
@@ -61,29 +67,13 @@
                 font-size: 14px;
                 width: 140px;
             }
+
             @media (max-width: 730px) {
                 font-size: 14px;
                 width: 150px;
             }
-           
+
         }
-        
+
     }
-    
-    
-    @media (min-width: 600px) {
-        flex-direction: row;
-        align-items: center;
-
-
-
-        .sort-buttons {
-            flex-direction: row;
-
-            button {
-                margin-right: 8px;
-            }
-        }
-    }
-
 }
