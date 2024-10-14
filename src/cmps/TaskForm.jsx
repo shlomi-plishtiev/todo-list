@@ -27,6 +27,10 @@ export function TaskForm({ addTask, updateTask, editIndex, taskData }) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        if (!newTask || !assignee) {
+            alert("Please fill in all fields.")
+            return
+        }
         if (editIndex !== null) {
             updateTask(newTask, assignee, priority)
         } else {
@@ -34,6 +38,7 @@ export function TaskForm({ addTask, updateTask, editIndex, taskData }) {
         }
         resetForm()
     }
+
 
     function resetForm() {
         setNewTask("")
