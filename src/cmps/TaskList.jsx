@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { useReactTable, getCoreRowModel, getSortedRowModel, getFilteredRowModel, flexRender } from '@tanstack/react-table'
+import { FaEdit, FaTrash } from 'react-icons/fa' // יבוא האייקונים
 
 // A filter function that returns true if a value exists in the column
 const includesFilterFn = (row, columnId, value) =>
@@ -34,14 +35,18 @@ export function TaskList({ tasks, editTask, confirmDelete }) {
             id: 'edit',
             header: 'Edit',
             cell: ({ row }) => (
-                <button className="edit-btn" onClick={() => editTask(row.index)}>Edit</button>
+              <span className="edit-icon" onClick={() => editTask(row.index)}>
+                <FaEdit />
+              </span>
             ),
-        },
-        {
+          },
+          {
             id: 'delete',
             header: 'Delete',
             cell: ({ row }) => (
-                <button className="delete-btn" onClick={() => confirmDelete(row.index)}>Delete</button>
+              <span className="delete-icon" onClick={() => confirmDelete(row.index)}>
+                <FaTrash />
+              </span>
             ),
         },
     ], [editTask, confirmDelete])
